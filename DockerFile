@@ -1,0 +1,15 @@
+# Use an official OpenJDK image as base
+FROM openjdk:17-jdk-slim
+
+# Add metadata
+LABEL maintainer="you@example.com"
+
+# Add a volume for logs if needed
+VOLUME /tmp
+
+# Copy the jar file into the container
+COPY target/your-app-name.jar app.jar
+
+# Run the jar file
+ENTRYPOINT ["java","-jar","/app.jar"]
+		
